@@ -27,6 +27,11 @@
         "command": "where-am-i.config",
         "category": "Where Am I",
         "title": "Config the name and color"
+      },
+      {
+        "command": "vscode-git-file-info.showLogs",
+        "category": "Where Am I",
+        "title": "Show extension logs"
       }
     ],
     "configuration": {
@@ -40,7 +45,7 @@
         },
         "where-am-i.color": {
           "type": "string",
-          "default": "",
+          "default": "#E6EDF3",
           "description": "The color of status text. When not defined, a random color will be used based on the project name."
         },
         "where-am-i.align": {
@@ -75,13 +80,28 @@
         },
         "where-am-i.template": {
           "type": "string",
-          "default": "{icon} {project-name}",
-          "description": "Defines template of project name placeholder"
+          "default": "{icon} {project-name}{git-branch}",
+          "description": "Defines template of project name placeholder. Available placeholders: {icon}, {project-name}, {git-branch}"
         },
         "where-am-i.projectSetting": {
           "type": "object",
           "default": {},
           "description": "Project preference"
+        },
+        "where-am-i.enableGitBranch": {
+          "type": "boolean",
+          "default": true,
+          "description": "显示Git分支信息"
+        },
+        "where-am-i.enableDebugLogs": {
+          "type": "boolean",
+          "default": false,
+          "description": "启用详细日志记录（用于调试）"
+        },
+        "where-am-i.gitBranchColor": {
+          "type": "string",
+          "default": "#FE626E",
+          "description": "Git分支名称的颜色"
         }
       }
     }
